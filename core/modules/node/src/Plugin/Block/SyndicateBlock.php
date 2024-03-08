@@ -12,13 +12,8 @@ use Drupal\Core\Url;
 
 /**
  * Provides a 'Syndicate' block that links to the site's RSS feed.
- *
- * @Block(
- *   id = "node_syndicate_block",
- *   admin_label = @Translation("Syndicate"),
- *   category = @Translation("System")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'node_syndicate_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Syndicate'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('System'))]
 class SyndicateBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
 

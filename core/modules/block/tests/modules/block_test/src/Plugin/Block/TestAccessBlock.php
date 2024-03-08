@@ -12,12 +12,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a block to test access.
- *
- * @Block(
- *   id = "test_access",
- *   admin_label = @Translation("Test block access")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'test_access', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Test block access'))]
 class TestAccessBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

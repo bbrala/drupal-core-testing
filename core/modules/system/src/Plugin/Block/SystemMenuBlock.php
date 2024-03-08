@@ -13,17 +13,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a generic Menu block.
- *
- * @Block(
- *   id = "system_menu_block",
- *   admin_label = @Translation("Menu"),
- *   category = @Translation("Menus"),
- *   deriver = "Drupal\system\Plugin\Derivative\SystemMenuBlock",
- *   forms = {
- *     "settings_tray" = "\Drupal\system\Form\SystemMenuOffCanvasForm",
- *   },
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'system_menu_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Menu'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Menus'), deriver: \Drupal\system\Plugin\Derivative\SystemMenuBlock::class, forms: ['settings_tray' => '\Drupal\system\Form\SystemMenuOffCanvasForm'])]
 class SystemMenuBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

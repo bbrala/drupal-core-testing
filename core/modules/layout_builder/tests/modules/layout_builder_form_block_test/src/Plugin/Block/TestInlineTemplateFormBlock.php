@@ -8,13 +8,8 @@ use Drupal\Core\Block\BlockBase;
  * Provides a block containing inline template with <form> tag.
  *
  * For use in Layout Builder tests.
- *
- * @Block(
- *   id = "layout_builder_form_block_test_inline_template_form_block",
- *   admin_label = @Translation("Layout Builder form block test inline template form block"),
- *   category = @Translation("Layout Builder form block test")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'layout_builder_form_block_test_inline_template_form_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Layout Builder form block test inline template form block'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Layout Builder form block test'))]
 class TestInlineTemplateFormBlock extends BlockBase {
 
   /**

@@ -19,16 +19,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Defines an inline block plugin type.
  *
- * @Block(
- *  id = "inline_block",
- *  admin_label = @Translation("Inline block"),
- *  category = @Translation("Inline blocks"),
- *  deriver = "Drupal\layout_builder\Plugin\Derivative\InlineBlockDeriver",
- * )
  *
  * @internal
  *   Plugin classes are internal.
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'inline_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Inline block'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Inline blocks'), deriver: \Drupal\layout_builder\Plugin\Derivative\InlineBlockDeriver::class)]
 class InlineBlock extends BlockBase implements ContainerFactoryPluginInterface, RefinableDependentAccessInterface {
 
   use RefinableDependentAccessTrait;

@@ -7,15 +7,8 @@ use Drupal\Core\Block\TitleBlockPluginInterface;
 
 /**
  * Provides a block to display the page title.
- *
- * @Block(
- *   id = "page_title_block",
- *   admin_label = @Translation("Page title"),
- *   forms = {
- *     "settings_tray" = FALSE,
- *   },
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'page_title_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Page title'), forms: ['settings_tray' => false])]
 class PageTitleBlock extends BlockBase implements TitleBlockPluginInterface {
 
   /**

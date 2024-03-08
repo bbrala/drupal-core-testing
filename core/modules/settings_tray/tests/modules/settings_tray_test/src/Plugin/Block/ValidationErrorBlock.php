@@ -7,12 +7,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Provides a 'Block with validation error' test block.
- *
- * @Block(
- *   id = "settings_tray_test_validation",
- *   admin_label = @Translation("Block with validation error")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'settings_tray_test_validation', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Block with validation error'))]
 class ValidationErrorBlock extends BlockBase {
 
   /**

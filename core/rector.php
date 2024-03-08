@@ -7,7 +7,8 @@ return static function(RectorConfig $rectorConfig): void {
   $rectorConfig->ruleWithConfiguration(\DrupalRector\Drupal10\Rector\Deprecation\AnnotationToAttributeRector::class, [
 
     // Setting remove version to 10.x means the comments are not kept.
-    new \DrupalRector\Drupal10\Rector\ValueObject\AnnotationToAttributeConfiguration('10.1.0', '10.0.0', 'Action', 'Drupal\Core\Action\Attribute\Action'),
+//    new \DrupalRector\Drupal10\Rector\ValueObject\AnnotationToAttributeConfiguration('10.1.0', '10.0.0', 'Action', 'Drupal\Core\Action\Attribute\Action'),
+    new \DrupalRector\Drupal10\Rector\ValueObject\AnnotationToAttributeConfiguration('10.1.0', '10.0.0', 'Block', 'Drupal\Core\Block\Attribute\Block'),
   ]);
 
   $rectorConfig->autoloadPaths([

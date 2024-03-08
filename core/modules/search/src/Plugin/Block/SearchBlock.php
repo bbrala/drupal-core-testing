@@ -14,13 +14,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a 'Search form' block.
- *
- * @Block(
- *   id = "search_form_block",
- *   admin_label = @Translation("Search form"),
- *   category = @Translation("Forms")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'search_form_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Search form'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Forms'))]
 class SearchBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

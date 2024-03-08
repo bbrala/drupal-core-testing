@@ -11,13 +11,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a 'Workspace switcher' block.
- *
- * @Block(
- *   id = "workspace_switcher",
- *   admin_label = @Translation("Workspace switcher"),
- *   category = @Translation("Workspace"),
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'workspace_switcher', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Workspace switcher'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Workspace'))]
 class WorkspaceSwitcherBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

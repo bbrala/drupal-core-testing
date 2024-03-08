@@ -16,14 +16,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Defines a generic block type.
- *
- * @Block(
- *  id = "block_content",
- *  admin_label = @Translation("Content block"),
- *  category = @Translation("Content block"),
- *  deriver = "Drupal\block_content\Plugin\Derivative\BlockContent"
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'block_content', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Content block'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Content block'), deriver: \Drupal\block_content\Plugin\Derivative\BlockContent::class)]
 class BlockContentBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

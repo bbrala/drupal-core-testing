@@ -6,13 +6,8 @@ use Drupal\Core\Database\Database;
 
 /**
  * Provides an 'Active forum topics' block.
- *
- * @Block(
- *   id = "forum_active_block",
- *   admin_label = @Translation("Active forum topics"),
- *   category = @Translation("Lists (Views)")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'forum_active_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Active forum topics'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Lists (Views)'))]
 class ActiveTopicsBlock extends ForumBlockBase {
 
   /**

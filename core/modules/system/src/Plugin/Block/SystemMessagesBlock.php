@@ -10,12 +10,8 @@ use Drupal\Core\Cache\Cache;
  * Provides a block to display the messages.
  *
  * @see @see \Drupal\Core\Messenger\MessengerInterface
- *
- * @Block(
- *   id = "system_messages_block",
- *   admin_label = @Translation("Messages")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'system_messages_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Messages'))]
 class SystemMessagesBlock extends BlockBase implements MessagesBlockPluginInterface {
 
   /**

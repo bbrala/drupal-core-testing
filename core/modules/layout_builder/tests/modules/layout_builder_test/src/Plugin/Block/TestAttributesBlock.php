@@ -7,13 +7,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Provides a 'TestAttributes' block.
- *
- * @Block(
- *   id = "layout_builder_test_test_attributes",
- *   admin_label = @Translation("Test Attributes"),
- *   category = @Translation("Test")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'layout_builder_test_test_attributes', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Test Attributes'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Test'))]
 class TestAttributesBlock extends BlockBase {
 
   /**

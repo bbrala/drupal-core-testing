@@ -12,15 +12,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Provides a 'Help' block.
- *
- * @Block(
- *   id = "help_block",
- *   admin_label = @Translation("Help"),
- *   forms = {
- *     "settings_tray" = FALSE,
- *   },
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'help_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Help'), forms: ['settings_tray' => false])]
 class HelpBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

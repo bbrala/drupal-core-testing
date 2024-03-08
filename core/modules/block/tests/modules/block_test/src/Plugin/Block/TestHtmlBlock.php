@@ -6,12 +6,8 @@ use Drupal\Core\Block\BlockBase;
 
 /**
  * Provides a block to test HTML.
- *
- * @Block(
- *   id = "test_html",
- *   admin_label = @Translation("Test HTML block")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'test_html', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Test HTML block'))]
 class TestHtmlBlock extends BlockBase {
 
   /**

@@ -6,15 +6,8 @@ use Drupal\Core\Block\BlockBase;
 
 /**
  * Block that explicitly provides no "settings_tray" form, thus opting out.
- *
- * @Block(
- *   id = "settings_tray_test_false",
- *   admin_label = "Settings Tray test block: forms[settings_tray]=FALSE",
- *   forms = {
- *     "settings_tray" = FALSE,
- *   },
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'settings_tray_test_false', admin_label: 'Settings Tray test block: forms[settings_tray]=FALSE', forms: ['settings_tray' => false])]
 class SettingsTrayFormAnnotationIsFalseBlock extends BlockBase {
 
   /**

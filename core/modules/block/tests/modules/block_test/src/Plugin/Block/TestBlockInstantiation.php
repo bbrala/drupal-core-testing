@@ -9,12 +9,8 @@ use Drupal\Core\Session\AccountInterface;
 
 /**
  * Provides a basic block for testing block instantiation and configuration.
- *
- * @Block(
- *   id = "test_block_instantiation",
- *   admin_label = @Translation("Display message")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'test_block_instantiation', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Display message'))]
 class TestBlockInstantiation extends BlockBase {
 
   /**

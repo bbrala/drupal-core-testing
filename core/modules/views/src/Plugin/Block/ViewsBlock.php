@@ -9,13 +9,8 @@ use Drupal\Core\Entity\EntityInterface;
 
 /**
  * Provides a generic Views block.
- *
- * @Block(
- *   id = "views_block",
- *   admin_label = @Translation("Views Block"),
- *   deriver = "Drupal\views\Plugin\Derivative\ViewsBlock"
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'views_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Views Block'), deriver: \Drupal\views\Plugin\Derivative\ViewsBlock::class)]
 class ViewsBlock extends ViewsBlockBase {
 
   /**

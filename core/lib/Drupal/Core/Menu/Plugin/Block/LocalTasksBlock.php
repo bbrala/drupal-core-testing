@@ -13,12 +13,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a "Tabs" block to display the local tasks.
- *
- * @Block(
- *   id = "local_tasks_block",
- *   admin_label = @Translation("Tabs"),
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'local_tasks_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Tabs'))]
 class LocalTasksBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

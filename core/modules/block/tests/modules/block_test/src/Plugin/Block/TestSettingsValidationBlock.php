@@ -7,12 +7,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Provides a test settings validation block.
- *
- * @Block(
- *  id = "test_settings_validation",
- *  admin_label = @Translation("Test settings validation block"),
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'test_settings_validation', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Test settings validation block'))]
 class TestSettingsValidationBlock extends BlockBase {
 
   /**

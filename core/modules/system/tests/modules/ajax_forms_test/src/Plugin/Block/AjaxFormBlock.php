@@ -12,13 +12,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides an AJAX form block.
- *
- * @Block(
- *   id = "ajax_forms_test_block",
- *   admin_label = @Translation("AJAX test form"),
- *   category = @Translation("Forms")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'ajax_forms_test_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('AJAX test form'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Forms'))]
 class AjaxFormBlock extends BlockBase implements FormInterface, ContainerFactoryPluginInterface {
 
   /**

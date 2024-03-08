@@ -6,12 +6,8 @@ use Drupal\Core\Block\BlockBase;
 
 /**
  * Provides a 'Powered by Drupal' block.
- *
- * @Block(
- *   id = "system_powered_by_block",
- *   admin_label = @Translation("Powered by Drupal")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'system_powered_by_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Powered by Drupal'))]
 class SystemPoweredByBlock extends BlockBase {
 
   /**

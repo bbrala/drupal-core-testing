@@ -16,13 +16,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a 'User login' block.
- *
- * @Block(
- *   id = "user_login_block",
- *   admin_label = @Translation("User login"),
- *   category = @Translation("Forms")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'user_login_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('User login'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Forms'))]
 class UserLoginBlock extends BlockBase implements ContainerFactoryPluginInterface, TrustedCallbackInterface {
 
   use RedirectDestinationTrait;
