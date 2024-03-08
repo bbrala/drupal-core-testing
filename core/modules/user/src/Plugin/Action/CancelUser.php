@@ -10,14 +10,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Cancels a user account.
- *
- * @Action(
- *   id = "user_cancel_user_action",
- *   label = @Translation("Cancel the selected user accounts"),
- *   type = "user",
- *   confirm_form_route_name = "user.multiple_cancel_confirm"
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'user_cancel_user_action', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Cancel the selected user accounts'), type: 'user', confirm_form_route_name: 'user.multiple_cancel_confirm')]
 class CancelUser extends ActionBase implements ContainerFactoryPluginInterface {
 
   /**

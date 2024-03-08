@@ -14,13 +14,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Sends a message to the current user's screen.
- *
- * @Action(
- *   id = "action_message_action",
- *   label = @Translation("Display a message to the user"),
- *   type = "system"
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'action_message_action', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Display a message to the user'), type: 'system')]
 class MessageAction extends ConfigurableActionBase implements ContainerFactoryPluginInterface {
 
   /**

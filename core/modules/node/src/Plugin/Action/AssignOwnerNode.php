@@ -12,13 +12,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Assigns ownership of a node to a user.
- *
- * @Action(
- *   id = "node_assign_owner_action",
- *   label = @Translation("Change the author of content"),
- *   type = "node"
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'node_assign_owner_action', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Change the author of content'), type: 'node')]
 class AssignOwnerNode extends ConfigurableActionBase implements ContainerFactoryPluginInterface {
 
   /**

@@ -8,13 +8,8 @@ use Drupal\Core\Session\AccountInterface;
 
 /**
  * Provides action that sets batch precessing.
- *
- * @Action(
- *   id = "user_batch_action_test_action",
- *   label = @Translation("Process user in batch"),
- *   type = "user",
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'user_batch_action_test_action', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Process user in batch'), type: 'user')]
 class BatchUserAction extends ActionBase {
 
   /**

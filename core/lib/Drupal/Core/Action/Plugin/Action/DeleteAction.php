@@ -9,13 +9,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Redirects to an entity deletion form.
- *
- * @Action(
- *   id = "entity:delete_action",
- *   action_label = @Translation("Delete"),
- *   deriver = "Drupal\Core\Action\Plugin\Action\Derivative\EntityDeleteActionDeriver",
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'entity:delete_action', action_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Delete'), deriver: 'Drupal\Core\Action\Plugin\Action\Derivative\EntityDeleteActionDeriver')]
 class DeleteAction extends EntityActionBase {
 
   /**

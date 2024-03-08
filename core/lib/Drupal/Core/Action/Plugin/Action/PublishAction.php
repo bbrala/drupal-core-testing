@@ -6,13 +6,8 @@ use Drupal\Core\Session\AccountInterface;
 
 /**
  * Publishes an entity.
- *
- * @Action(
- *   id = "entity:publish_action",
- *   action_label = @Translation("Publish"),
- *   deriver = "Drupal\Core\Action\Plugin\Action\Derivative\EntityPublishedActionDeriver",
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'entity:publish_action', action_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Publish'), deriver: 'Drupal\Core\Action\Plugin\Action\Derivative\EntityPublishedActionDeriver')]
 class PublishAction extends EntityActionBase {
 
   /**

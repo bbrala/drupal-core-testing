@@ -7,13 +7,8 @@ use Drupal\Core\Session\AccountInterface;
 
 /**
  * Provides an operation to save user entities.
- *
- * @Action(
- *   id = "action_test_save_entity",
- *   label = @Translation("Saves entities"),
- *   type = "user"
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'action_test_save_entity', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Saves entities'), type: 'user')]
 class SaveEntity extends ActionBase {
 
   /**

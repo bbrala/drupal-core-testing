@@ -7,13 +7,8 @@ use Drupal\node\NodeInterface;
 
 /**
  * Promotes a node.
- *
- * @Action(
- *   id = "node_promote_action",
- *   label = @Translation("Promote selected content to front page"),
- *   type = "node"
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'node_promote_action', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Promote selected content to front page'), type: 'node')]
 class PromoteNode extends FieldUpdateActionBase {
 
   /**

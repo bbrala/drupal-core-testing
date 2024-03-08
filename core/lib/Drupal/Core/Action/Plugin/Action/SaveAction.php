@@ -9,13 +9,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides an action that can save any entity.
- *
- * @Action(
- *   id = "entity:save_action",
- *   action_label = @Translation("Save"),
- *   deriver = "Drupal\Core\Action\Plugin\Action\Derivative\EntityChangedActionDeriver",
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'entity:save_action', action_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Save'), deriver: 'Drupal\Core\Action\Plugin\Action\Derivative\EntityChangedActionDeriver')]
 class SaveAction extends EntityActionBase {
 
   /**

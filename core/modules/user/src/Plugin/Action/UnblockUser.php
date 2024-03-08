@@ -7,13 +7,8 @@ use Drupal\Core\Session\AccountInterface;
 
 /**
  * Unblocks a user.
- *
- * @Action(
- *   id = "user_unblock_user_action",
- *   label = @Translation("Unblock the selected users"),
- *   type = "user"
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'user_unblock_user_action', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Unblock the selected users'), type: 'user')]
 class UnblockUser extends ActionBase {
 
   /**
