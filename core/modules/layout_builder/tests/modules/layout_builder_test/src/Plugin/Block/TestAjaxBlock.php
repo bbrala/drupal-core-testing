@@ -7,13 +7,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Provides a 'TestAjax' block.
- *
- * @Block(
- *   id = "layout_builder_test_testajax",
- *   admin_label = @Translation("TestAjax"),
- *   category = @Translation("Test")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'layout_builder_test_testajax', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('TestAjax'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Test'))]
 class TestAjaxBlock extends BlockBase {
 
   /**

@@ -10,12 +10,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a block to display the breadcrumbs.
- *
- * @Block(
- *   id = "system_breadcrumb_block",
- *   admin_label = @Translation("Breadcrumbs")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'system_breadcrumb_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Breadcrumbs'))]
 class SystemBreadcrumbBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

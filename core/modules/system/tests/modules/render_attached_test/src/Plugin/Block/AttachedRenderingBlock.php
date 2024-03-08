@@ -10,13 +10,10 @@ use Drupal\Core\Render\BubbleableMetadata;
 /**
  * A block we can use to test caching of #attached headers.
  *
- * @Block(
- *   id = "attached_rendering_block",
- *   admin_label = @Translation("AttachedRenderingBlock")
- * )
  *
  * @see \Drupal\system\Tests\Render\HtmlResponseAttachmentsTest
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'attached_rendering_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('AttachedRenderingBlock'))]
 class AttachedRenderingBlock extends BlockBase {
 
   /**

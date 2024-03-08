@@ -15,12 +15,8 @@ use Drupal\statistics\StatisticsStorageInterface;
 
 /**
  * Provides a 'Popular content' block.
- *
- * @Block(
- *   id = "statistics_popular_block",
- *   admin_label = @Translation("Popular content")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'statistics_popular_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Popular content'))]
 class StatisticsPopularBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

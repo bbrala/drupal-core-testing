@@ -6,13 +6,8 @@ use Drupal\Core\Database\Database;
 
 /**
  * Provides a 'New forum topics' block.
- *
- * @Block(
- *   id = "forum_new_block",
- *   admin_label = @Translation("New forum topics"),
- *   category = @Translation("Lists (Views)")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'forum_new_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('New forum topics'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Lists (Views)'))]
 class NewTopicsBlock extends ForumBlockBase {
 
   /**

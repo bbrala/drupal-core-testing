@@ -11,13 +11,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Provides a block containing a simple redirect form.
  *
  * @see \Drupal\form_test\Form\RedirectBlockForm
- *
- * @Block(
- *   id = "redirect_form_block",
- *   admin_label = @Translation("Redirecting form"),
- *   category = @Translation("Forms")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'redirect_form_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Redirecting form'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Forms'))]
 class RedirectFormBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

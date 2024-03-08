@@ -23,14 +23,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   This block plugin handles all other field entities not provided by
  *   hook_entity_extra_field_info().
  *
- * @Block(
- *   id = "extra_field_block",
- *   deriver = "\Drupal\layout_builder\Plugin\Derivative\ExtraFieldBlockDeriver",
- * )
  *
  * @internal
  *   Plugin classes are internal.
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'extra_field_block', deriver: \\Drupal\layout_builder\Plugin\Derivative\ExtraFieldBlockDeriver::class)]
 class ExtraFieldBlock extends BlockBase implements ContextAwarePluginInterface, ContainerFactoryPluginInterface {
 
   /**

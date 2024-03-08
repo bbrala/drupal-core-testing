@@ -27,14 +27,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Provides a block that renders a field from an entity.
  *
- * @Block(
- *   id = "field_block",
- *   deriver = "\Drupal\layout_builder\Plugin\Derivative\FieldBlockDeriver",
- * )
  *
  * @internal
  *   Plugin classes are internal.
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'field_block', deriver: \\Drupal\layout_builder\Plugin\Derivative\FieldBlockDeriver::class)]
 class FieldBlock extends BlockBase implements ContextAwarePluginInterface, ContainerFactoryPluginInterface {
 
   /**

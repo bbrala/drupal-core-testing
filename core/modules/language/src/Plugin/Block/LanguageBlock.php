@@ -13,14 +13,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a 'Language switcher' block.
- *
- * @Block(
- *   id = "language_block",
- *   admin_label = @Translation("Language switcher"),
- *   category = @Translation("System"),
- *   deriver = "Drupal\language\Plugin\Derivative\LanguageBlock"
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'language_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Language switcher'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('System'), deriver: \Drupal\language\Plugin\Derivative\LanguageBlock::class)]
 class LanguageBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

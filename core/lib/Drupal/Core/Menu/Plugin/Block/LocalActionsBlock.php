@@ -10,12 +10,8 @@ use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
  * Provides a block to display the local actions.
- *
- * @Block(
- *   id = "local_actions_block",
- *   admin_label = @Translation("Primary admin actions")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'local_actions_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Primary admin actions'))]
 class LocalActionsBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

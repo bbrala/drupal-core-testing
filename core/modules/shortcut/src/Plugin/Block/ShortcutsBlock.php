@@ -8,13 +8,8 @@ use Drupal\Core\Session\AccountInterface;
 
 /**
  * Provides a 'Shortcut' block.
- *
- * @Block(
- *   id = "shortcuts",
- *   admin_label = @Translation("Shortcuts"),
- *   category = @Translation("Menus")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'shortcuts', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Shortcuts'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Menus'))]
 class ShortcutsBlock extends BlockBase {
 
   /**

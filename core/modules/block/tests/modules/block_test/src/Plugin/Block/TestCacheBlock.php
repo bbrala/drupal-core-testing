@@ -6,12 +6,8 @@ use Drupal\Core\Block\BlockBase;
 
 /**
  * Provides a block to test caching.
- *
- * @Block(
- *   id = "test_cache",
- *   admin_label = @Translation("Test block caching")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'test_cache', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Test block caching'))]
 class TestCacheBlock extends BlockBase {
 
   /**

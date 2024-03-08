@@ -6,13 +6,8 @@ use Drupal\Core\Block\BlockBase;
 
 /**
  * Defines a class for a context-aware block.
- *
- * @Block(
- *   id = "preview_aware_block",
- *   admin_label = "Preview-aware block",
- *   category = "Test",
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'preview_aware_block', admin_label: 'Preview-aware block', category: 'Test')]
 class PreviewAwareBlock extends BlockBase {
 
   /**

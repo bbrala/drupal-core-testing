@@ -14,13 +14,8 @@ use Drupal\Core\Entity\EntityStorageInterface;
 
 /**
  * Provides a 'Book navigation' block.
- *
- * @Block(
- *   id = "book_navigation",
- *   admin_label = @Translation("Book navigation"),
- *   category = @Translation("Menus")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'book_navigation', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Book navigation'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Menus'))]
 class BookNavigationBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**

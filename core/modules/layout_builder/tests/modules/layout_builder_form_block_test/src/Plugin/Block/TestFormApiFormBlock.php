@@ -11,13 +11,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a block containing a Form API form for use in Layout Builder tests.
- *
- * @Block(
- *   id = "layout_builder_form_block_test_form_api_form_block",
- *   admin_label = @Translation("Layout Builder form block test form api form block"),
- *   category = @Translation("Layout Builder form block test")
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'layout_builder_form_block_test_form_api_form_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Layout Builder form block test form api form block'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Layout Builder form block test'))]
 class TestFormApiFormBlock extends BlockBase implements ContainerFactoryPluginInterface, FormInterface {
 
   /**

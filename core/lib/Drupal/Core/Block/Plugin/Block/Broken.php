@@ -13,13 +13,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Defines a fallback plugin for missing block plugins.
- *
- * @Block(
- *   id = "broken",
- *   admin_label = @Translation("Broken/Missing"),
- *   category = @Translation("Block"),
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'broken', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Broken/Missing'), category: new Drupal\Core\StringTranslation\TranslatableMarkup('Block'))]
 class Broken extends PluginBase implements BlockPluginInterface, ContainerFactoryPluginInterface {
 
   use BlockPluginTrait;

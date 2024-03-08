@@ -14,14 +14,11 @@ use Drupal\layout_builder\Plugin\Block\FieldBlock as LayoutBuilderFieldBlock;
  * testing, this plugin uses the same deriver but each derivative will have a
  * different provider.
  *
- * @Block(
- *   id = "field_block_test",
- *   deriver = "\Drupal\layout_builder\Plugin\Derivative\FieldBlockDeriver",
- * )
  *
  * @see \Drupal\Tests\layout_builder\FunctionalJavascript\FieldBlockTest
  * @see layout_builder_plugin_filter_block__block_ui_alter()
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'field_block_test', deriver: \\Drupal\layout_builder\Plugin\Derivative\FieldBlockDeriver::class)]
 class FieldBlock extends LayoutBuilderFieldBlock {
 
 }

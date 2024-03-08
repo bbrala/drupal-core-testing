@@ -7,13 +7,8 @@ use Drupal\Component\Utility\Xss;
 
 /**
  * Provides a 'Views Exposed Filter' block.
- *
- * @Block(
- *   id = "views_exposed_filter_block",
- *   admin_label = @Translation("Views Exposed Filter Block"),
- *   deriver = "Drupal\views\Plugin\Derivative\ViewsExposedFilterBlock"
- * )
  */
+#[\Drupal\Core\Block\Attribute\Block(id: 'views_exposed_filter_block', admin_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Views Exposed Filter Block'), deriver: \Drupal\views\Plugin\Derivative\ViewsExposedFilterBlock::class)]
 class ViewsExposedFilterBlock extends ViewsBlockBase {
 
   /**
