@@ -16,13 +16,8 @@ use Symfony\Component\HttpKernel\KernelEvents;
 
 /**
  * Redirects to a different URL.
- *
- * @Action(
- *   id = "action_goto_action",
- *   label = @Translation("Redirect to URL"),
- *   type = "system"
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'action_goto_action', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Redirect to URL'), type: 'system')]
 class GotoAction extends ConfigurableActionBase implements ContainerFactoryPluginInterface {
 
   /**

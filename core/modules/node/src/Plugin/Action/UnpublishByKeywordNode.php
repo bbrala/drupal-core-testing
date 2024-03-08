@@ -9,13 +9,8 @@ use Drupal\Core\Session\AccountInterface;
 
 /**
  * Unpublishes a node containing certain keywords.
- *
- * @Action(
- *   id = "node_unpublish_by_keyword_action",
- *   label = @Translation("Unpublish content containing keyword(s)"),
- *   type = "node"
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'node_unpublish_by_keyword_action', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Unpublish content containing keyword(s)'), type: 'node')]
 class UnpublishByKeywordNode extends ConfigurableActionBase {
 
   /**

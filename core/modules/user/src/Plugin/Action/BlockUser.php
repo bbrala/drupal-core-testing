@@ -7,13 +7,8 @@ use Drupal\Core\Session\AccountInterface;
 
 /**
  * Blocks a user.
- *
- * @Action(
- *   id = "user_block_user_action",
- *   label = @Translation("Block the selected users"),
- *   type = "user"
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'user_block_user_action', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Block the selected users'), type: 'user')]
 class BlockUser extends ActionBase {
 
   /**

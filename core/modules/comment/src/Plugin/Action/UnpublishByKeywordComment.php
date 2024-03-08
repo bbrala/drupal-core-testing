@@ -13,13 +13,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Unpublishes a comment containing certain keywords.
- *
- * @Action(
- *   id = "comment_unpublish_by_keyword_action",
- *   label = @Translation("Unpublish comment containing keyword(s)"),
- *   type = "comment"
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'comment_unpublish_by_keyword_action', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Unpublish comment containing keyword(s)'), type: 'comment')]
 class UnpublishByKeywordComment extends ConfigurableActionBase implements ContainerFactoryPluginInterface {
 
   /**

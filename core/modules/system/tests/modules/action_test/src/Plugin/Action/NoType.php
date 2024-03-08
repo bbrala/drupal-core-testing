@@ -8,12 +8,8 @@ use Drupal\Core\Session\AccountInterface;
 
 /**
  * Provides an operation with no type specified.
- *
- * @Action(
- *   id = "action_test_no_type",
- *   label = @Translation("An operation with no type specified")
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'action_test_no_type', label: new Drupal\Core\StringTranslation\TranslatableMarkup('An operation with no type specified'))]
 class NoType extends ActionBase {
 
   /**

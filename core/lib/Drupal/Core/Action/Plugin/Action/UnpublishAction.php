@@ -6,13 +6,8 @@ use Drupal\Core\Session\AccountInterface;
 
 /**
  * Unpublishes an entity.
- *
- * @Action(
- *   id = "entity:unpublish_action",
- *   action_label = @Translation("Unpublish"),
- *   deriver = "Drupal\Core\Action\Plugin\Action\Derivative\EntityPublishedActionDeriver",
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'entity:unpublish_action', action_label: new Drupal\Core\StringTranslation\TranslatableMarkup('Unpublish'), deriver: 'Drupal\Core\Action\Plugin\Action\Derivative\EntityPublishedActionDeriver')]
 class UnpublishAction extends EntityActionBase {
 
   /**

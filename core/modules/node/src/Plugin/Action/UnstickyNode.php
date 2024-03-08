@@ -7,13 +7,8 @@ use Drupal\node\NodeInterface;
 
 /**
  * Makes a node not sticky.
- *
- * @Action(
- *   id = "node_make_unsticky_action",
- *   label = @Translation("Make selected content not sticky"),
- *   type = "node"
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'node_make_unsticky_action', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Make selected content not sticky'), type: 'node')]
 class UnstickyNode extends FieldUpdateActionBase {
 
   /**

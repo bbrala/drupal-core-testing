@@ -7,13 +7,8 @@ use Drupal\node\NodeInterface;
 
 /**
  * Makes a node sticky.
- *
- * @Action(
- *   id = "node_make_sticky_action",
- *   label = @Translation("Make selected content sticky"),
- *   type = "node"
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'node_make_sticky_action', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Make selected content sticky'), type: 'node')]
 class StickyNode extends FieldUpdateActionBase {
 
   /**

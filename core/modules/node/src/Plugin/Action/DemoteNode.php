@@ -7,13 +7,8 @@ use Drupal\node\NodeInterface;
 
 /**
  * Demotes a node.
- *
- * @Action(
- *   id = "node_unpromote_action",
- *   label = @Translation("Demote selected content from front page"),
- *   type = "node"
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'node_unpromote_action', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Demote selected content from front page'), type: 'node')]
 class DemoteNode extends FieldUpdateActionBase {
 
   /**

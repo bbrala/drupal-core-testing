@@ -18,13 +18,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Sends an email message.
- *
- * @Action(
- *   id = "action_send_email_action",
- *   label = @Translation("Send email"),
- *   type = "system"
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'action_send_email_action', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Send email'), type: 'system')]
 class EmailAction extends ConfigurableActionBase implements ContainerFactoryPluginInterface {
 
   /**

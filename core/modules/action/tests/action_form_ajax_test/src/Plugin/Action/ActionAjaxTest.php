@@ -9,13 +9,8 @@ use Drupal\Core\Session\AccountInterface;
 
 /**
  * Plugin used for testing AJAX in action config entity forms.
- *
- * @Action(
- *   id = "action_form_ajax_test",
- *   label = @Translation("action_form_ajax_test"),
- *   type = "system"
- * )
  */
+#[\Drupal\Core\Action\Attribute\Action(id: 'action_form_ajax_test', label: new Drupal\Core\StringTranslation\TranslatableMarkup('action_form_ajax_test'), type: 'system')]
 class ActionAjaxTest extends ConfigurableActionBase {
 
   /**
