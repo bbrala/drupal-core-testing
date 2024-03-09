@@ -7,25 +7,8 @@ use Drupal\Core\Field\BaseFieldDefinition;
 
 /**
  * Defines the test entity class for testing entity constraint violations.
- *
- * @ContentEntityType(
- *   id = "entity_test_constraint_violation",
- *   label = @Translation("Test entity constraint violation"),
- *   handlers = {
- *     "form" = {
- *       "default" = "Drupal\entity_test\EntityTestForm"
- *     }
- *   },
- *   base_table = "entity_test_constraint_violation",
- *   persistent_cache = FALSE,
- *   entity_keys = {
- *     "id" = "id",
- *     "uuid" = "uuid",
- *     "bundle" = "type",
- *     "label" = "name"
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ContentEntityType(id: 'entity_test_constraint_violation', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Test entity constraint violation'), handlers: ['form' => ['default' => 'Drupal\entity_test\EntityTestForm']], base_table: 'entity_test_constraint_violation', persistent_cache: false, entity_keys: ['id' => 'id', 'uuid' => 'uuid', 'bundle' => 'type', 'label' => 'name'])]
 class EntityTestConstraintViolation extends EntityTest {
 
   /**

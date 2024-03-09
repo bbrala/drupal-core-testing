@@ -8,37 +8,8 @@ use Drupal\entity_test\FieldStorageDefinition;
 
 /**
  * Defines a test entity class for base fields display.
- *
- * @ContentEntityType(
- *   id = "entity_test_base_field_display",
- *   label = @Translation("Test entity - base field display"),
- *   handlers = {
- *     "access" = "Drupal\entity_test\EntityTestAccessControlHandler",
- *     "form" = {
- *       "default" = "Drupal\entity_test\EntityTestForm"
- *     },
- *     "route_provider" = {
- *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
- *     },
- *   },
- *   base_table = "entity_test_base_field_display",
- *   admin_permission = "administer entity_test content",
- *   entity_keys = {
- *     "id" = "id",
- *     "label" = "name",
- *     "uuid" = "uuid",
- *     "bundle" = "type",
- *     "langcode" = "langcode",
- *   },
- *   links = {
- *     "canonical" = "/entity_test_base_field_display/{entity_test_base_field_display}/edit",
- *     "add-form" = "/entity_test_base_field_display/add",
- *     "edit-form" = "/entity_test_base_field_display/manage/{entity_test_base_field_display}",
- *     "delete-form" = "/entity_test/delete/entity_test_base_field_display/{entity_test_base_field_display}/edit",
- *   },
- *   field_ui_base_route = "entity.entity_test_base_field_display.admin_form",
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ContentEntityType(id: 'entity_test_base_field_display', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Test entity - base field display'), handlers: ['access' => 'Drupal\entity_test\EntityTestAccessControlHandler', 'form' => ['default' => 'Drupal\entity_test\EntityTestForm'], 'route_provider' => ['html' => 'Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider']], base_table: 'entity_test_base_field_display', admin_permission: 'administer entity_test content', entity_keys: ['id' => 'id', 'label' => 'name', 'uuid' => 'uuid', 'bundle' => 'type', 'langcode' => 'langcode'], links: ['canonical' => '/entity_test_base_field_display/{entity_test_base_field_display}/edit', 'add-form' => '/entity_test_base_field_display/add', 'edit-form' => '/entity_test_base_field_display/manage/{entity_test_base_field_display}', 'delete-form' => '/entity_test/delete/entity_test_base_field_display/{entity_test_base_field_display}/edit'], field_ui_base_route: 'entity.entity_test_base_field_display.admin_form')]
 class EntityTestBaseFieldDisplay extends EntityTest {
 
   /**

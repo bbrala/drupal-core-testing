@@ -13,52 +13,8 @@ use Drupal\Core\Entity\EntityStorageInterface;
 
 /**
  * Defines a Block configuration entity class.
- *
- * @ConfigEntityType(
- *   id = "block",
- *   label = @Translation("Block"),
- *   label_collection = @Translation("Blocks"),
- *   label_singular = @Translation("block"),
- *   label_plural = @Translation("blocks"),
- *   label_count = @PluralTranslation(
- *     singular = "@count block",
- *     plural = "@count blocks",
- *   ),
- *   handlers = {
- *     "access" = "Drupal\block\BlockAccessControlHandler",
- *     "view_builder" = "Drupal\block\BlockViewBuilder",
- *     "list_builder" = "Drupal\block\BlockListBuilder",
- *     "form" = {
- *       "default" = "Drupal\block\BlockForm",
- *       "delete" = "Drupal\block\Form\BlockDeleteForm"
- *     }
- *   },
- *   admin_permission = "administer blocks",
- *   entity_keys = {
- *     "id" = "id",
- *     "status" = "status"
- *   },
- *   links = {
- *     "delete-form" = "/admin/structure/block/manage/{block}/delete",
- *     "edit-form" = "/admin/structure/block/manage/{block}",
- *     "enable" = "/admin/structure/block/manage/{block}/enable",
- *     "disable" = "/admin/structure/block/manage/{block}/disable",
- *   },
- *   config_export = {
- *     "id",
- *     "theme",
- *     "region",
- *     "weight",
- *     "provider",
- *     "plugin",
- *     "settings",
- *     "visibility",
- *   },
- *   lookup_keys = {
- *     "theme"
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'block', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Block'), label_collection: new Drupal\Core\StringTranslation\TranslatableMarkup('Blocks'), label_singular: new Drupal\Core\StringTranslation\TranslatableMarkup('block'), label_plural: new Drupal\Core\StringTranslation\TranslatableMarkup('blocks'), label_count: ['singular' => '@count block', 'plural' => '@count blocks'], handlers: ['access' => 'Drupal\block\BlockAccessControlHandler', 'view_builder' => 'Drupal\block\BlockViewBuilder', 'list_builder' => 'Drupal\block\BlockListBuilder', 'form' => ['default' => 'Drupal\block\BlockForm', 'delete' => 'Drupal\block\Form\BlockDeleteForm']], admin_permission: 'administer blocks', entity_keys: ['id' => 'id', 'status' => 'status'], links: ['delete-form' => '/admin/structure/block/manage/{block}/delete', 'edit-form' => '/admin/structure/block/manage/{block}', 'enable' => '/admin/structure/block/manage/{block}/enable', 'disable' => '/admin/structure/block/manage/{block}/disable'], config_export: ['id', 'theme', 'region', 'weight', 'provider', 'plugin', 'settings', 'visibility'], lookup_keys: ['theme'])]
 class Block extends ConfigEntityBase implements BlockInterface, EntityWithPluginCollectionInterface {
 
   /**

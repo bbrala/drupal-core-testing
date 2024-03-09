@@ -16,43 +16,8 @@ use Drupal\user\EntityOwnerTrait;
  * Defines the file entity class.
  *
  * @ingroup file
- *
- * @ContentEntityType(
- *   id = "file",
- *   label = @Translation("File"),
- *   label_collection = @Translation("Files"),
- *   label_singular = @Translation("file"),
- *   label_plural = @Translation("files"),
- *   label_count = @PluralTranslation(
- *     singular = "@count file",
- *     plural = "@count files",
- *   ),
- *   handlers = {
- *     "storage" = "Drupal\file\FileStorage",
- *     "storage_schema" = "Drupal\file\FileStorageSchema",
- *     "access" = "Drupal\file\FileAccessControlHandler",
- *     "views_data" = "Drupal\file\FileViewsData",
- *     "list_builder" = "Drupal\Core\Entity\EntityListBuilder",
- *     "form" = {
- *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
- *     },
- *     "route_provider" = {
- *       "html" = "Drupal\file\Entity\FileRouteProvider",
- *     },
- *   },
- *   base_table = "file_managed",
- *   entity_keys = {
- *     "id" = "fid",
- *     "label" = "filename",
- *     "langcode" = "langcode",
- *     "uuid" = "uuid",
- *     "owner" = "uid",
- *   },
- *   links = {
- *     "delete-form" = "/file/{file}/delete",
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ContentEntityType(id: 'file', label: new Drupal\Core\StringTranslation\TranslatableMarkup('File'), label_collection: new Drupal\Core\StringTranslation\TranslatableMarkup('Files'), label_singular: new Drupal\Core\StringTranslation\TranslatableMarkup('file'), label_plural: new Drupal\Core\StringTranslation\TranslatableMarkup('files'), label_count: ['singular' => '@count file', 'plural' => '@count files'], handlers: ['storage' => 'Drupal\file\FileStorage', 'storage_schema' => 'Drupal\file\FileStorageSchema', 'access' => 'Drupal\file\FileAccessControlHandler', 'views_data' => 'Drupal\file\FileViewsData', 'list_builder' => 'Drupal\Core\Entity\EntityListBuilder', 'form' => ['delete' => 'Drupal\Core\Entity\ContentEntityDeleteForm'], 'route_provider' => ['html' => 'Drupal\file\Entity\FileRouteProvider']], base_table: 'file_managed', entity_keys: ['id' => 'fid', 'label' => 'filename', 'langcode' => 'langcode', 'uuid' => 'uuid', 'owner' => 'uid'], links: ['delete-form' => '/file/{file}/delete'])]
 class File extends ContentEntityBase implements FileInterface {
 
   use EntityChangedTrait;

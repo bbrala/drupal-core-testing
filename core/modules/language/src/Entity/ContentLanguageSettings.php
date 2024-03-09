@@ -10,32 +10,8 @@ use Drupal\language\ContentLanguageSettingsInterface;
 
 /**
  * Defines the ContentLanguageSettings entity.
- *
- * @ConfigEntityType(
- *   id = "language_content_settings",
- *   label = @Translation("Content language settings"),
- *   label_collection = @Translation("Content language settings"),
- *   label_singular = @Translation("content language setting"),
- *   label_plural = @Translation("content languages settings"),
- *   label_count = @PluralTranslation(
- *     singular = "@count content language setting",
- *     plural = "@count content languages settings",
- *   ),
- *   admin_permission = "administer languages",
- *   config_prefix = "content_settings",
- *   entity_keys = {
- *     "id" = "id"
- *   },
- *   config_export = {
- *     "id",
- *     "target_entity_type_id",
- *     "target_bundle",
- *     "default_langcode",
- *     "language_alterable",
- *   },
- *   list_cache_tags = { "rendered" }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'language_content_settings', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Content language settings'), label_collection: new Drupal\Core\StringTranslation\TranslatableMarkup('Content language settings'), label_singular: new Drupal\Core\StringTranslation\TranslatableMarkup('content language setting'), label_plural: new Drupal\Core\StringTranslation\TranslatableMarkup('content languages settings'), label_count: ['singular' => '@count content language setting', 'plural' => '@count content languages settings'], admin_permission: 'administer languages', config_prefix: 'content_settings', entity_keys: ['id' => 'id'], config_export: ['id', 'target_entity_type_id', 'target_bundle', 'default_langcode', 'language_alterable'], list_cache_tags: ['rendered'])]
 class ContentLanguageSettings extends ConfigEntityBase implements ContentLanguageSettingsInterface {
 
   /**

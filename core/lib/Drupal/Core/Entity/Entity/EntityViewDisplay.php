@@ -16,27 +16,8 @@ use Drupal\Core\TypedData\TranslatableInterface as TranslatableDataInterface;
  *
  * Contains display options for all components of a rendered entity in a given
  * view mode.
- *
- * @ConfigEntityType(
- *   id = "entity_view_display",
- *   label = @Translation("Entity view display"),
- *   entity_keys = {
- *     "id" = "id",
- *     "status" = "status"
- *   },
- *   handlers = {
- *     "access" = "\Drupal\Core\Entity\Entity\Access\EntityViewDisplayAccessControlHandler",
- *   },
- *   config_export = {
- *     "id",
- *     "targetEntityType",
- *     "bundle",
- *     "mode",
- *     "content",
- *     "hidden",
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'entity_view_display', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Entity view display'), entity_keys: ['id' => 'id', 'status' => 'status'], handlers: ['access' => '\Drupal\Core\Entity\Entity\Access\EntityViewDisplayAccessControlHandler'], config_export: ['id', 'targetEntityType', 'bundle', 'mode', 'content', 'hidden'])]
 class EntityViewDisplay extends EntityDisplayBase implements EntityViewDisplayInterface {
 
   /**

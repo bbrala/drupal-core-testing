@@ -8,16 +8,8 @@ use Drupal\Core\Field\BaseFieldDefinition;
 
 /**
  * Defines a content entity type that has a string ID.
- *
- * @ContentEntityType(
- *   id = "migrate_string_id_entity_test",
- *   label = @Translation("String id entity test"),
- *   base_table = "migrate_entity_test_string_id",
- *   entity_keys = {
- *     "id" = "id",
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ContentEntityType(id: 'migrate_string_id_entity_test', label: new Drupal\Core\StringTranslation\TranslatableMarkup('String id entity test'), base_table: 'migrate_entity_test_string_id', entity_keys: ['id' => 'id'])]
 class StringIdEntityTest extends ContentEntityBase {
 
   /**

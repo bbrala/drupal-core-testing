@@ -8,27 +8,8 @@ use Drupal\Core\Entity\RevisionLogInterface;
 
 /**
  * Defines the test entity class.
- *
- * @ContentEntityType(
- *   id = "entity_test_mulrev_changed_rev",
- *   label = @Translation("Test entity - revisions log and data table"),
- *   base_table = "entity_test_mulrev_changed_revlog",
- *   revision_table = "entity_test_mulrev_changed_revlog_revision",
- *   entity_keys = {
- *     "id" = "id",
- *     "uuid" = "uuid",
- *     "bundle" = "type",
- *     "revision" = "revision_id",
- *     "label" = "name",
- *     "langcode" = "langcode",
- *   },
- *   revision_metadata_keys = {
- *     "revision_user" = "revision_user",
- *     "revision_created" = "revision_created",
- *     "revision_log_message" = "revision_log_message"
- *   },
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ContentEntityType(id: 'entity_test_mulrev_changed_rev', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Test entity - revisions log and data table'), base_table: 'entity_test_mulrev_changed_revlog', revision_table: 'entity_test_mulrev_changed_revlog_revision', entity_keys: ['id' => 'id', 'uuid' => 'uuid', 'bundle' => 'type', 'revision' => 'revision_id', 'label' => 'name', 'langcode' => 'langcode'], revision_metadata_keys: ['revision_user' => 'revision_user', 'revision_created' => 'revision_created', 'revision_log_message' => 'revision_log_message'])]
 class EntityTestMulRevChangedWithRevisionLog extends EntityTestMulRevChanged implements RevisionLogInterface {
 
   use RevisionLogEntityTrait;

@@ -21,22 +21,8 @@ use Drupal\Core\Entity\EntityFormModeInterface;
  *
  * @see \Drupal\Core\Entity\EntityDisplayRepositoryInterface::getAllFormModes()
  * @see \Drupal\Core\Entity\EntityDisplayRepositoryInterface::getFormModes()
- *
- * @ConfigEntityType(
- *   id = "entity_form_mode",
- *   label = @Translation("Form mode"),
- *   entity_keys = {
- *     "id" = "id",
- *     "label" = "label"
- *   },
- *   config_export = {
- *     "id",
- *     "label",
- *     "targetEntityType",
- *     "cache",
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'entity_form_mode', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Form mode'), entity_keys: ['id' => 'id', 'label' => 'label'], config_export: ['id', 'label', 'targetEntityType', 'cache'])]
 class EntityFormMode extends EntityDisplayModeBase implements EntityFormModeInterface {
 
 }

@@ -8,53 +8,8 @@ use Drupal\node\NodeTypeInterface;
 
 /**
  * Defines the Node type configuration entity.
- *
- * @ConfigEntityType(
- *   id = "node_type",
- *   label = @Translation("Content type"),
- *   label_collection = @Translation("Content types"),
- *   label_singular = @Translation("content type"),
- *   label_plural = @Translation("content types"),
- *   label_count = @PluralTranslation(
- *     singular = "@count content type",
- *     plural = "@count content types",
- *   ),
- *   handlers = {
- *     "access" = "Drupal\node\NodeTypeAccessControlHandler",
- *     "form" = {
- *       "add" = "Drupal\node\NodeTypeForm",
- *       "edit" = "Drupal\node\NodeTypeForm",
- *       "delete" = "Drupal\node\Form\NodeTypeDeleteConfirm"
- *     },
- *     "route_provider" = {
- *       "permissions" = "Drupal\user\Entity\EntityPermissionsRouteProvider",
- *     },
- *     "list_builder" = "Drupal\node\NodeTypeListBuilder",
- *   },
- *   admin_permission = "administer content types",
- *   config_prefix = "type",
- *   bundle_of = "node",
- *   entity_keys = {
- *     "id" = "type",
- *     "label" = "name"
- *   },
- *   links = {
- *     "edit-form" = "/admin/structure/types/manage/{node_type}",
- *     "delete-form" = "/admin/structure/types/manage/{node_type}/delete",
- *     "entity-permissions-form" = "/admin/structure/types/manage/{node_type}/permissions",
- *     "collection" = "/admin/structure/types",
- *   },
- *   config_export = {
- *     "name",
- *     "type",
- *     "description",
- *     "help",
- *     "new_revision",
- *     "preview_mode",
- *     "display_submitted",
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'node_type', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Content type'), label_collection: new Drupal\Core\StringTranslation\TranslatableMarkup('Content types'), label_singular: new Drupal\Core\StringTranslation\TranslatableMarkup('content type'), label_plural: new Drupal\Core\StringTranslation\TranslatableMarkup('content types'), label_count: ['singular' => '@count content type', 'plural' => '@count content types'], handlers: ['access' => 'Drupal\node\NodeTypeAccessControlHandler', 'form' => ['add' => 'Drupal\node\NodeTypeForm', 'edit' => 'Drupal\node\NodeTypeForm', 'delete' => 'Drupal\node\Form\NodeTypeDeleteConfirm'], 'route_provider' => ['permissions' => 'Drupal\user\Entity\EntityPermissionsRouteProvider'], 'list_builder' => 'Drupal\node\NodeTypeListBuilder'], admin_permission: 'administer content types', config_prefix: 'type', bundle_of: 'node', entity_keys: ['id' => 'type', 'label' => 'name'], links: ['edit-form' => '/admin/structure/types/manage/{node_type}', 'delete-form' => '/admin/structure/types/manage/{node_type}/delete', 'entity-permissions-form' => '/admin/structure/types/manage/{node_type}/permissions', 'collection' => '/admin/structure/types'], config_export: ['name', 'type', 'description', 'help', 'new_revision', 'preview_mode', 'display_submitted'])]
 class NodeType extends ConfigEntityBundleBase implements NodeTypeInterface {
 
   /**

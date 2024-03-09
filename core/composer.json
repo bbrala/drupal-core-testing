@@ -44,7 +44,7 @@
         "psr/log": "^3.0",
         "mck89/peast": "^1.14",
         "sebastian/diff": "^4",
-        "palantirnet/drupal-rector": "dev-action-attributes"
+        "palantirnet/drupal-rector": "dev-feature/annotation-configentitytype"
     },
     "conflict": {
         "drush/drush": "<8.1.10"
@@ -114,12 +114,6 @@
     },
     "suggest": {
         "ext-zip": "Needed to extend the plugin.manager.archiver service capability with the handling of files in the ZIP format."
-    },
-    "repositories": {
-        "palantirnet/drupal-rector" : {
-            "type": "vcs",
-            "url": "https://github.com/skilld-labs/drupal-rector"
-        }
     },
     "extra": {
         "drupal-scaffold": {

@@ -11,46 +11,8 @@ use Drupal\user\UserInterface;
 
 /**
  * Defines the test entity class.
- *
- * @ContentEntityType(
- *   id = "entity_test",
- *   label = @Translation("Test entity"),
- *   handlers = {
- *     "list_builder" = "Drupal\entity_test\EntityTestListBuilder",
- *     "view_builder" = "Drupal\entity_test\EntityTestViewBuilder",
- *     "access" = "Drupal\entity_test\EntityTestAccessControlHandler",
- *     "form" = {
- *       "default" = "Drupal\entity_test\EntityTestForm",
- *       "delete" = "Drupal\entity_test\EntityTestDeleteForm"
- *     },
- *     "route_provider" = {
- *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
- *     },
- *     "views_data" = "Drupal\entity_test\EntityTestViewsData"
- *   },
- *   base_table = "entity_test",
- *   admin_permission = "administer entity_test content",
- *   persistent_cache = FALSE,
- *   list_cache_contexts = { "entity_test_view_grants" },
- *   entity_keys = {
- *     "id" = "id",
- *     "uuid" = "uuid",
- *     "bundle" = "type",
- *     "label" = "name",
- *     "langcode" = "langcode",
- *   },
- *   links = {
- *     "canonical" = "/entity_test/{entity_test}",
- *     "add-form" = "/entity_test/add",
- *     "edit-form" = "/entity_test/manage/{entity_test}/edit",
- *     "delete-form" = "/entity_test/delete/entity_test/{entity_test}",
- *   },
- *   field_ui_base_route = "entity.entity_test.admin_form",
- * )
- *
- * Note that this entity type annotation intentionally omits the "create" link
- * template. See https://www.drupal.org/node/2293697.
  */
+#[\Drupal\Core\Entity\Attribute\ContentEntityType(id: 'entity_test', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Test entity'), handlers: ['list_builder' => 'Drupal\entity_test\EntityTestListBuilder', 'view_builder' => 'Drupal\entity_test\EntityTestViewBuilder', 'access' => 'Drupal\entity_test\EntityTestAccessControlHandler', 'form' => ['default' => 'Drupal\entity_test\EntityTestForm', 'delete' => 'Drupal\entity_test\EntityTestDeleteForm'], 'route_provider' => ['html' => 'Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider'], 'views_data' => 'Drupal\entity_test\EntityTestViewsData'], base_table: 'entity_test', admin_permission: 'administer entity_test content', persistent_cache: false, list_cache_contexts: ['entity_test_view_grants'], entity_keys: ['id' => 'id', 'uuid' => 'uuid', 'bundle' => 'type', 'label' => 'name', 'langcode' => 'langcode'], links: ['canonical' => '/entity_test/{entity_test}', 'add-form' => '/entity_test/add', 'edit-form' => '/entity_test/manage/{entity_test}/edit', 'delete-form' => '/entity_test/delete/entity_test/{entity_test}'], field_ui_base_route: 'entity.entity_test.admin_form')]
 class EntityTest extends ContentEntityBase implements EntityOwnerInterface {
 
   /**

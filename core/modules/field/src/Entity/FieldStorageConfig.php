@@ -13,42 +13,8 @@ use Drupal\field\FieldStorageConfigInterface;
 
 /**
  * Defines the Field storage configuration entity.
- *
- * @ConfigEntityType(
- *   id = "field_storage_config",
- *   label = @Translation("Field storage"),
- *   label_collection = @Translation("Field storages"),
- *   label_singular = @Translation("field storage"),
- *   label_plural = @Translation("field storages"),
- *   label_count = @PluralTranslation(
- *     singular = "@count field storage",
- *     plural = "@count field storages",
- *   ),
- *   handlers = {
- *     "access" = "Drupal\field\FieldStorageConfigAccessControlHandler",
- *     "storage" = "Drupal\field\FieldStorageConfigStorage"
- *   },
- *   config_prefix = "storage",
- *   entity_keys = {
- *     "id" = "id",
- *     "label" = "id"
- *   },
- *   config_export = {
- *     "id",
- *     "field_name",
- *     "entity_type",
- *     "type",
- *     "settings",
- *     "module",
- *     "locked",
- *     "cardinality",
- *     "translatable",
- *     "indexes",
- *     "persist_with_no_fields",
- *     "custom_storage",
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'field_storage_config', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Field storage'), label_collection: new Drupal\Core\StringTranslation\TranslatableMarkup('Field storages'), label_singular: new Drupal\Core\StringTranslation\TranslatableMarkup('field storage'), label_plural: new Drupal\Core\StringTranslation\TranslatableMarkup('field storages'), label_count: ['singular' => '@count field storage', 'plural' => '@count field storages'], handlers: ['access' => 'Drupal\field\FieldStorageConfigAccessControlHandler', 'storage' => 'Drupal\field\FieldStorageConfigStorage'], config_prefix: 'storage', entity_keys: ['id' => 'id', 'label' => 'id'], config_export: ['id', 'field_name', 'entity_type', 'type', 'settings', 'module', 'locked', 'cardinality', 'translatable', 'indexes', 'persist_with_no_fields', 'custom_storage'])]
 class FieldStorageConfig extends ConfigEntityBase implements FieldStorageConfigInterface {
 
   /**

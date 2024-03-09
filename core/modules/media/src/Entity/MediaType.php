@@ -9,58 +9,8 @@ use Drupal\media\MediaTypeInterface;
 
 /**
  * Defines the Media type configuration entity.
- *
- * @ConfigEntityType(
- *   id = "media_type",
- *   label = @Translation("Media type"),
- *   label_collection = @Translation("Media types"),
- *   label_singular = @Translation("media type"),
- *   label_plural = @Translation("media types"),
- *   label_count = @PluralTranslation(
- *     singular = "@count media type",
- *     plural = "@count media types"
- *   ),
- *   handlers = {
- *     "access" = "Drupal\media\MediaTypeAccessControlHandler",
- *     "form" = {
- *       "add" = "Drupal\media\MediaTypeForm",
- *       "edit" = "Drupal\media\MediaTypeForm",
- *       "delete" = "Drupal\media\Form\MediaTypeDeleteConfirmForm"
- *     },
- *     "list_builder" = "Drupal\media\MediaTypeListBuilder",
- *     "route_provider" = {
- *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
- *       "permissions" = "Drupal\user\Entity\EntityPermissionsRouteProvider",
- *     }
- *   },
- *   admin_permission = "administer media types",
- *   config_prefix = "type",
- *   bundle_of = "media",
- *   entity_keys = {
- *     "id" = "id",
- *     "label" = "label",
- *     "status" = "status",
- *   },
- *   config_export = {
- *     "id",
- *     "label",
- *     "description",
- *     "source",
- *     "queue_thumbnail_downloads",
- *     "new_revision",
- *     "source_configuration",
- *     "field_map",
- *     "status",
- *   },
- *   links = {
- *     "add-form" = "/admin/structure/media/add",
- *     "edit-form" = "/admin/structure/media/manage/{media_type}",
- *     "delete-form" = "/admin/structure/media/manage/{media_type}/delete",
- *     "entity-permissions-form" = "/admin/structure/media/manage/{media_type}/permissions",
- *     "collection" = "/admin/structure/media",
- *   },
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'media_type', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Media type'), label_collection: new Drupal\Core\StringTranslation\TranslatableMarkup('Media types'), label_singular: new Drupal\Core\StringTranslation\TranslatableMarkup('media type'), label_plural: new Drupal\Core\StringTranslation\TranslatableMarkup('media types'), label_count: ['singular' => '@count media type', 'plural' => '@count media types'], handlers: ['access' => 'Drupal\media\MediaTypeAccessControlHandler', 'form' => ['add' => 'Drupal\media\MediaTypeForm', 'edit' => 'Drupal\media\MediaTypeForm', 'delete' => 'Drupal\media\Form\MediaTypeDeleteConfirmForm'], 'list_builder' => 'Drupal\media\MediaTypeListBuilder', 'route_provider' => ['html' => 'Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider', 'permissions' => 'Drupal\user\Entity\EntityPermissionsRouteProvider']], admin_permission: 'administer media types', config_prefix: 'type', bundle_of: 'media', entity_keys: ['id' => 'id', 'label' => 'label', 'status' => 'status'], config_export: ['id', 'label', 'description', 'source', 'queue_thumbnail_downloads', 'new_revision', 'source_configuration', 'field_map', 'status'], links: ['add-form' => '/admin/structure/media/add', 'edit-form' => '/admin/structure/media/manage/{media_type}', 'delete-form' => '/admin/structure/media/manage/{media_type}/delete', 'entity-permissions-form' => '/admin/structure/media/manage/{media_type}/permissions', 'collection' => '/admin/structure/media'])]
 class MediaType extends ConfigEntityBundleBase implements MediaTypeInterface, EntityWithPluginCollectionInterface {
 
   /**

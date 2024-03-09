@@ -9,30 +9,8 @@ use Drupal\rest\RestResourceConfigInterface;
 
 /**
  * Defines a RestResourceConfig configuration entity class.
- *
- * @ConfigEntityType(
- *   id = "rest_resource_config",
- *   label = @Translation("REST resource configuration"),
- *   label_collection = @Translation("REST resource configurations"),
- *   label_singular = @Translation("REST resource configuration"),
- *   label_plural = @Translation("REST resource configurations"),
- *   label_count = @PluralTranslation(
- *     singular = "@count REST resource configuration",
- *     plural = "@count REST resource configurations",
- *   ),
- *   config_prefix = "resource",
- *   admin_permission = "administer rest resources",
- *   entity_keys = {
- *     "id" = "id"
- *   },
- *   config_export = {
- *     "id",
- *     "plugin_id",
- *     "granularity",
- *     "configuration"
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'rest_resource_config', label: new Drupal\Core\StringTranslation\TranslatableMarkup('REST resource configuration'), label_collection: new Drupal\Core\StringTranslation\TranslatableMarkup('REST resource configurations'), label_singular: new Drupal\Core\StringTranslation\TranslatableMarkup('REST resource configuration'), label_plural: new Drupal\Core\StringTranslation\TranslatableMarkup('REST resource configurations'), label_count: ['singular' => '@count REST resource configuration', 'plural' => '@count REST resource configurations'], config_prefix: 'resource', admin_permission: 'administer rest resources', entity_keys: ['id' => 'id'], config_export: ['id', 'plugin_id', 'granularity', 'configuration'])]
 class RestResourceConfig extends ConfigEntityBase implements RestResourceConfigInterface {
 
   /**
