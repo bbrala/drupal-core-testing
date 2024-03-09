@@ -17,27 +17,8 @@ use Symfony\Component\Validator\ConstraintViolationListInterface;
  *
  * Contains widget options for all components of an entity form in a given
  * form mode.
- *
- * @ConfigEntityType(
- *   id = "entity_form_display",
- *   label = @Translation("Entity form display"),
- *   entity_keys = {
- *     "id" = "id",
- *     "status" = "status"
- *   },
- *   handlers = {
- *     "access" = "\Drupal\Core\Entity\Entity\Access\EntityFormDisplayAccessControlHandler",
- *   },
- *   config_export = {
- *     "id",
- *     "targetEntityType",
- *     "bundle",
- *     "mode",
- *     "content",
- *     "hidden",
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'entity_form_display', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Entity form display'), entity_keys: ['id' => 'id', 'status' => 'status'], handlers: ['access' => '\Drupal\Core\Entity\Entity\Access\EntityFormDisplayAccessControlHandler'], config_export: ['id', 'targetEntityType', 'bundle', 'mode', 'content', 'hidden'])]
 class EntityFormDisplay extends EntityDisplayBase implements EntityFormDisplayInterface {
 
   /**

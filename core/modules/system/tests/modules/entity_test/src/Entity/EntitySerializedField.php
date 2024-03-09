@@ -7,25 +7,8 @@ use Drupal\Core\Field\BaseFieldDefinition;
 
 /**
  * Defines a test class for testing fields with a serialized column.
- *
- * @ContentEntityType(
- *   id = "entity_test_serialized_field",
- *   label = @Translation("Test serialized fields"),
- *   entity_keys = {
- *     "id" = "id",
- *     "uuid" = "uuid",
- *     "bundle" = "type",
- *     "label" = "name"
- *   },
- *   base_table = "entity_test_serialized_fields",
- *   persistent_cache = FALSE,
- *   serialized_field_property_names = {
- *     "serialized_long" = {
- *       "value"
- *     }
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ContentEntityType(id: 'entity_test_serialized_field', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Test serialized fields'), entity_keys: ['id' => 'id', 'uuid' => 'uuid', 'bundle' => 'type', 'label' => 'name'], base_table: 'entity_test_serialized_fields', persistent_cache: false, serialized_field_property_names: ['serialized_long' => ['value']])]
 class EntitySerializedField extends EntityTest {
 
   /**

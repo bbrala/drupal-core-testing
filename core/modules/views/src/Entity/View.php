@@ -13,36 +13,8 @@ use Drupal\views\ViewEntityInterface;
 
 /**
  * Defines a View configuration entity class.
- *
- * @ConfigEntityType(
- *   id = "view",
- *   label = @Translation("View", context = "View entity type"),
- *   label_collection = @Translation("Views", context = "View entity type"),
- *   label_singular = @Translation("view", context = "View entity type"),
- *   label_plural = @Translation("views", context = "View entity type"),
- *   label_count = @PluralTranslation(
- *     singular = "@count view",
- *     plural = "@count views",
- *     context = "View entity type",
- *   ),
- *   admin_permission = "administer views",
- *   entity_keys = {
- *     "id" = "id",
- *     "label" = "label",
- *     "status" = "status"
- *   },
- *   config_export = {
- *     "id",
- *     "label",
- *     "module",
- *     "description",
- *     "tag",
- *     "base_table",
- *     "base_field",
- *     "display",
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'view', label: new Drupal\Core\StringTranslation\TranslatableMarkup('View', ['context' => 'View entity type']), label_collection: new Drupal\Core\StringTranslation\TranslatableMarkup('Views', ['context' => 'View entity type']), label_singular: new Drupal\Core\StringTranslation\TranslatableMarkup('view', ['context' => 'View entity type']), label_plural: new Drupal\Core\StringTranslation\TranslatableMarkup('views', ['context' => 'View entity type']), label_count: ['singular' => '@count view', 'plural' => '@count views'], admin_permission: 'administer views', entity_keys: ['id' => 'id', 'label' => 'label', 'status' => 'status'], config_export: ['id', 'label', 'module', 'description', 'tag', 'base_table', 'base_field', 'display'])]
 class View extends ConfigEntityBase implements ViewEntityInterface {
 
   /**

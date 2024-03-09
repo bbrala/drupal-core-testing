@@ -6,18 +6,8 @@ use Drupal\Core\Entity\EntityTypeInterface;
 
 /**
  * Defines a test entity class for testing default values.
- *
- * @ContentEntityType(
- *   id = "entity_test_field_override",
- *   label = @Translation("Test entity field overrides"),
- *   base_table = "entity_test_field_override",
- *   entity_keys = {
- *     "id" = "id",
- *     "uuid" = "uuid",
- *     "bundle" = "type"
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ContentEntityType(id: 'entity_test_field_override', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Test entity field overrides'), base_table: 'entity_test_field_override', entity_keys: ['id' => 'id', 'uuid' => 'uuid', 'bundle' => 'type'])]
 class EntityTestFieldOverride extends EntityTest {
 
   /**

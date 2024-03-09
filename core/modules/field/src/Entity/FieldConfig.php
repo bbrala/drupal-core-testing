@@ -11,47 +11,8 @@ use Drupal\field\FieldConfigInterface;
 
 /**
  * Defines the Field entity.
- *
- * @ConfigEntityType(
- *   id = "field_config",
- *   label = @Translation("Field"),
- *   label_collection = @Translation("Fields"),
- *   label_singular = @Translation("field"),
- *   label_plural = @Translation("fields"),
- *   label_count = @PluralTranslation(
- *     singular = "@count field",
- *     plural = "@count fields",
- *   ),
- *   handlers = {
- *     "access" = "Drupal\field\FieldConfigAccessControlHandler",
- *     "storage" = "Drupal\field\FieldConfigStorage"
- *   },
- *   config_prefix = "field",
- *   entity_keys = {
- *     "id" = "id",
- *     "label" = "label"
- *   },
- *   config_export = {
- *     "id",
- *     "field_name",
- *     "entity_type",
- *     "bundle",
- *     "label",
- *     "description",
- *     "required",
- *     "translatable",
- *     "default_value",
- *     "default_value_callback",
- *     "settings",
- *     "field_type",
- *   },
- *   constraints = {
- *     "RequiredConfigDependencies" = {
- *       "field_storage_config"
- *     }
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'field_config', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Field'), label_collection: new Drupal\Core\StringTranslation\TranslatableMarkup('Fields'), label_singular: new Drupal\Core\StringTranslation\TranslatableMarkup('field'), label_plural: new Drupal\Core\StringTranslation\TranslatableMarkup('fields'), label_count: ['singular' => '@count field', 'plural' => '@count fields'], handlers: ['access' => 'Drupal\field\FieldConfigAccessControlHandler', 'storage' => 'Drupal\field\FieldConfigStorage'], config_prefix: 'field', entity_keys: ['id' => 'id', 'label' => 'label'], config_export: ['id', 'field_name', 'entity_type', 'bundle', 'label', 'description', 'required', 'translatable', 'default_value', 'default_value_callback', 'settings', 'field_type'], constraints: ['RequiredConfigDependencies' => ['field_storage_config']])]
 class FieldConfig extends FieldConfigBase implements FieldConfigInterface {
 
   /**

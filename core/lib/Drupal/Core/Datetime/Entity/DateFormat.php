@@ -8,27 +8,8 @@ use Drupal\Core\Datetime\DateFormatInterface;
 
 /**
  * Defines the Date Format configuration entity class.
- *
- * @ConfigEntityType(
- *   id = "date_format",
- *   label = @Translation("Date format"),
- *   handlers = {
- *     "access" = "Drupal\system\DateFormatAccessControlHandler",
- *   },
- *   entity_keys = {
- *     "id" = "id",
- *     "label" = "label"
- *   },
- *   admin_permission = "administer site configuration",
- *   list_cache_tags = { "rendered" },
- *   config_export = {
- *     "id",
- *     "label",
- *     "locked",
- *     "pattern",
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'date_format', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Date format'), handlers: ['access' => 'Drupal\system\DateFormatAccessControlHandler'], entity_keys: ['id' => 'id', 'label' => 'label'], admin_permission: 'administer site configuration', list_cache_tags: ['rendered'], config_export: ['id', 'label', 'locked', 'pattern'])]
 class DateFormat extends ConfigEntityBase implements DateFormatInterface {
 
   /**

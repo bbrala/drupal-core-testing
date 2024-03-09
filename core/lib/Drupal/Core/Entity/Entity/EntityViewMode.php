@@ -23,22 +23,8 @@ use Drupal\Core\Entity\EntityViewModeInterface;
  * @see \Drupal\Core\Entity\EntityDisplayRepositoryInterface::getAllViewModes()
  * @see \Drupal\Core\Entity\EntityDisplayRepositoryInterface::getViewModes()
  * @see hook_entity_view_mode_info_alter()
- *
- * @ConfigEntityType(
- *   id = "entity_view_mode",
- *   label = @Translation("View mode"),
- *   entity_keys = {
- *     "id" = "id",
- *     "label" = "label"
- *   },
- *   config_export = {
- *     "id",
- *     "label",
- *     "targetEntityType",
- *     "cache",
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'entity_view_mode', label: new Drupal\Core\StringTranslation\TranslatableMarkup('View mode'), entity_keys: ['id' => 'id', 'label' => 'label'], config_export: ['id', 'label', 'targetEntityType', 'cache'])]
 class EntityViewMode extends EntityDisplayModeBase implements EntityViewModeInterface {
 
 }

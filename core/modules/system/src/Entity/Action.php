@@ -11,31 +11,8 @@ use Drupal\Core\Action\ActionPluginCollection;
 
 /**
  * Defines the configured action entity.
- *
- * @ConfigEntityType(
- *   id = "action",
- *   label = @Translation("Action"),
- *   label_collection = @Translation("Actions"),
- *   label_singular = @Translation("action"),
- *   label_plural = @Translation("actions"),
- *   label_count = @PluralTranslation(
- *     singular = "@count action",
- *     plural = "@count actions",
- *   ),
- *   admin_permission = "administer actions",
- *   entity_keys = {
- *     "id" = "id",
- *     "label" = "label"
- *   },
- *   config_export = {
- *     "id",
- *     "label",
- *     "type",
- *     "plugin",
- *     "configuration",
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'action', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Action'), label_collection: new Drupal\Core\StringTranslation\TranslatableMarkup('Actions'), label_singular: new Drupal\Core\StringTranslation\TranslatableMarkup('action'), label_plural: new Drupal\Core\StringTranslation\TranslatableMarkup('actions'), label_count: ['singular' => '@count action', 'plural' => '@count actions'], admin_permission: 'administer actions', entity_keys: ['id' => 'id', 'label' => 'label'], config_export: ['id', 'label', 'type', 'plugin', 'configuration'])]
 class Action extends ConfigEntityBase implements ActionConfigEntityInterface, EntityWithPluginCollectionInterface {
 
   /**

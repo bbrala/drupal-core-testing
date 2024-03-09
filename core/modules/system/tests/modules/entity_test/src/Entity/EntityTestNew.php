@@ -7,19 +7,7 @@ namespace Drupal\entity_test\Entity;
  *
  * This entity type is initially not defined. It is enabled when needed to test
  * the related updates.
- *
- * @ContentEntityType(
- *   id = "entity_test_new",
- *   label = @Translation("New test entity"),
- *   base_table = "entity_test_new",
- *   entity_keys = {
- *     "id" = "id",
- *     "uuid" = "uuid",
- *     "bundle" = "type",
- *     "label" = "name",
- *     "langcode" = "langcode",
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ContentEntityType(id: 'entity_test_new', label: new Drupal\Core\StringTranslation\TranslatableMarkup('New test entity'), base_table: 'entity_test_new', entity_keys: ['id' => 'id', 'uuid' => 'uuid', 'bundle' => 'type', 'label' => 'name', 'langcode' => 'langcode'])]
 class EntityTestNew extends EntityTest {
 }

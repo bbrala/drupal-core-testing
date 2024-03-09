@@ -8,36 +8,8 @@ use Drupal\editor\EditorInterface;
 
 /**
  * Defines the configured text editor entity.
- *
- * @ConfigEntityType(
- *   id = "editor",
- *   label = @Translation("Text editor"),
- *   label_collection = @Translation("Text editors"),
- *   label_singular = @Translation("text editor"),
- *   label_plural = @Translation("text editors"),
- *   label_count = @PluralTranslation(
- *     singular = "@count text editor",
- *     plural = "@count text editors",
- *   ),
- *   handlers = {
- *     "access" = "Drupal\editor\EditorAccessControlHandler",
- *   },
- *   entity_keys = {
- *     "id" = "format"
- *   },
- *   config_export = {
- *     "format",
- *     "editor",
- *     "settings",
- *     "image_upload",
- *   },
- *   constraints = {
- *     "RequiredConfigDependencies" = {
- *       "filter_format"
- *     }
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'editor', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Text editor'), label_collection: new Drupal\Core\StringTranslation\TranslatableMarkup('Text editors'), label_singular: new Drupal\Core\StringTranslation\TranslatableMarkup('text editor'), label_plural: new Drupal\Core\StringTranslation\TranslatableMarkup('text editors'), label_count: ['singular' => '@count text editor', 'plural' => '@count text editors'], handlers: ['access' => 'Drupal\editor\EditorAccessControlHandler'], entity_keys: ['id' => 'format'], config_export: ['format', 'editor', 'settings', 'image_upload'], constraints: ['RequiredConfigDependencies' => ['filter_format']])]
 class Editor extends ConfigEntityBase implements EditorInterface {
 
   /**

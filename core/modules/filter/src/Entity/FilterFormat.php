@@ -12,47 +12,8 @@ use Drupal\filter\Plugin\FilterInterface;
 
 /**
  * Represents a text format.
- *
- * @ConfigEntityType(
- *   id = "filter_format",
- *   label = @Translation("Text format"),
- *   label_collection = @Translation("Text formats"),
- *   label_singular = @Translation("text format"),
- *   label_plural = @Translation("text formats"),
- *   label_count = @PluralTranslation(
- *     singular = "@count text format",
- *     plural = "@count text formats",
- *   ),
- *   handlers = {
- *     "form" = {
- *       "add" = "Drupal\filter\FilterFormatAddForm",
- *       "edit" = "Drupal\filter\FilterFormatEditForm",
- *       "disable" = "Drupal\filter\Form\FilterDisableForm"
- *     },
- *     "list_builder" = "Drupal\filter\FilterFormatListBuilder",
- *     "access" = "Drupal\filter\FilterFormatAccessControlHandler",
- *   },
- *   config_prefix = "format",
- *   admin_permission = "administer filters",
- *   entity_keys = {
- *     "id" = "format",
- *     "label" = "name",
- *     "weight" = "weight",
- *     "status" = "status"
- *   },
- *   links = {
- *     "edit-form" = "/admin/config/content/formats/manage/{filter_format}",
- *     "disable" = "/admin/config/content/formats/manage/{filter_format}/disable"
- *   },
- *   config_export = {
- *     "name",
- *     "format",
- *     "weight",
- *     "roles",
- *     "filters",
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'filter_format', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Text format'), label_collection: new Drupal\Core\StringTranslation\TranslatableMarkup('Text formats'), label_singular: new Drupal\Core\StringTranslation\TranslatableMarkup('text format'), label_plural: new Drupal\Core\StringTranslation\TranslatableMarkup('text formats'), label_count: ['singular' => '@count text format', 'plural' => '@count text formats'], handlers: ['form' => ['add' => 'Drupal\filter\FilterFormatAddForm', 'edit' => 'Drupal\filter\FilterFormatEditForm', 'disable' => 'Drupal\filter\Form\FilterDisableForm'], 'list_builder' => 'Drupal\filter\FilterFormatListBuilder', 'access' => 'Drupal\filter\FilterFormatAccessControlHandler'], config_prefix: 'format', admin_permission: 'administer filters', entity_keys: ['id' => 'format', 'label' => 'name', 'weight' => 'weight', 'status' => 'status'], links: ['edit-form' => '/admin/config/content/formats/manage/{filter_format}', 'disable' => '/admin/config/content/formats/manage/{filter_format}/disable'], config_export: ['name', 'format', 'weight', 'roles', 'filters'])]
 class FilterFormat extends ConfigEntityBase implements FilterFormatInterface, EntityWithPluginCollectionInterface {
 
   /**

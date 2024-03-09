@@ -8,38 +8,8 @@ use Drupal\tour\TourInterface;
 
 /**
  * Defines the configured tour entity.
- *
- * @ConfigEntityType(
- *   id = "tour",
- *   label = @Translation("Tour"),
- *   label_collection = @Translation("Tours"),
- *   label_singular = @Translation("tour"),
- *   label_plural = @Translation("tours"),
- *   label_count = @PluralTranslation(
- *     singular = "@count tour",
- *     plural = "@count tours",
- *   ),
- *   handlers = {
- *     "view_builder" = "Drupal\tour\TourViewBuilder",
- *     "access" = "Drupal\tour\TourAccessControlHandler",
- *   },
- *   admin_permission = "administer site configuration",
- *   entity_keys = {
- *     "id" = "id",
- *     "label" = "label"
- *   },
- *   config_export = {
- *     "id",
- *     "label",
- *     "module",
- *     "routes",
- *     "tips",
- *   },
- *   lookup_keys = {
- *     "routes.*.route_name"
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'tour', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Tour'), label_collection: new Drupal\Core\StringTranslation\TranslatableMarkup('Tours'), label_singular: new Drupal\Core\StringTranslation\TranslatableMarkup('tour'), label_plural: new Drupal\Core\StringTranslation\TranslatableMarkup('tours'), label_count: ['singular' => '@count tour', 'plural' => '@count tours'], handlers: ['view_builder' => 'Drupal\tour\TourViewBuilder', 'access' => 'Drupal\tour\TourAccessControlHandler'], admin_permission: 'administer site configuration', entity_keys: ['id' => 'id', 'label' => 'label'], config_export: ['id', 'label', 'module', 'routes', 'tips'], lookup_keys: ['routes.*.route_name'])]
 class Tour extends ConfigEntityBase implements TourInterface {
 
   /**

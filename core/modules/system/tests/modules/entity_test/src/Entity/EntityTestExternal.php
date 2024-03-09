@@ -6,21 +6,8 @@ use Drupal\Core\Url;
 
 /**
  * Test entity class.
- *
- * @ContentEntityType(
- *   id = "entity_test_external",
- *   label = @Translation("Entity test external"),
- *   base_table = "entity_test_external",
- *   entity_keys = {
- *     "id" = "id",
- *     "uuid" = "uuid",
- *     "bundle" = "type",
- *   },
- *   links = {
- *     "canonical" = "/entity_test_external/{entity_test_external}"
- *   },
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ContentEntityType(id: 'entity_test_external', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Entity test external'), base_table: 'entity_test_external', entity_keys: ['id' => 'id', 'uuid' => 'uuid', 'bundle' => 'type'], links: ['canonical' => '/entity_test_external/{entity_test_external}'])]
 class EntityTestExternal extends EntityTest {
 
   /**

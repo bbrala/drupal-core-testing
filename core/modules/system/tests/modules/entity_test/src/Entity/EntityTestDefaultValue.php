@@ -7,19 +7,8 @@ use Drupal\Core\Field\BaseFieldDefinition;
 
 /**
  * Defines a test entity class for testing default values.
- *
- * @ContentEntityType(
- *   id = "entity_test_default_value",
- *   label = @Translation("Test entity for default values"),
- *   base_table = "entity_test_default_value",
- *   entity_keys = {
- *     "id" = "id",
- *     "uuid" = "uuid",
- *     "bundle" = "type",
- *     "langcode" = "langcode"
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ContentEntityType(id: 'entity_test_default_value', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Test entity for default values'), base_table: 'entity_test_default_value', entity_keys: ['id' => 'id', 'uuid' => 'uuid', 'bundle' => 'type', 'langcode' => 'langcode'])]
 class EntityTestDefaultValue extends EntityTest {
 
   /**

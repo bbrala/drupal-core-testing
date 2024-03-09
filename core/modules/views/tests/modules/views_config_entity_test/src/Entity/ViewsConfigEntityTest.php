@@ -6,25 +6,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
 
 /**
  * Defines a configuration-based entity type used for testing Views data.
- *
- * @ConfigEntityType(
- *   id = "views_config_entity_test",
- *   label = @Translation("Test config entity type with Views data"),
- *   handlers = {
- *     "list_builder" = "Drupal\Core\Entity\EntityListBuilder",
- *     "views_data" = "Drupal\views_config_entity_test\ViewsConfigEntityTestViewsData"
- *   },
- *   admin_permission = "administer modules",
- *   config_prefix = "type",
- *   entity_keys = {
- *     "id" = "id",
- *     "label" = "name"
- *   },
- *   config_export = {
- *     "id",
- *     "label",
- *   }
- * )
  */
+#[\Drupal\Core\Entity\Attribute\ConfigEntityType(id: 'views_config_entity_test', label: new Drupal\Core\StringTranslation\TranslatableMarkup('Test config entity type with Views data'), handlers: ['list_builder' => 'Drupal\Core\Entity\EntityListBuilder', 'views_data' => 'Drupal\views_config_entity_test\ViewsConfigEntityTestViewsData'], admin_permission: 'administer modules', config_prefix: 'type', entity_keys: ['id' => 'id', 'label' => 'name'], config_export: ['id', 'label'])]
 class ViewsConfigEntityTest extends ConfigEntityBase {
 }
